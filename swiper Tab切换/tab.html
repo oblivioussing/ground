@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Swiper demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="../dist/css/swiper.min.css">
+
+	<style>
+		html {
+			font-size: 20px;
+		}
+		html,
+		body {
+			position: relative;
+			height: 100%;
+		}
+		body {
+			background: #eee;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color: #000;
+			margin: 0;
+			padding: 0;
+		}
+		.swiper-container {
+			background-color: #fff;
+			width: 100%;
+		}
+		.swiper-slide {
+			text-align: center;
+			font-size: 0.6rem;
+			background: #fff;
+			padding: 5px 0;
+			width: 20%;
+		}
+		.active {
+			border-bottom: 2px #FF0000 solid;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide active">无敌</div>
+			<div class="swiper-slide">凤凰</div>
+			<div class="swiper-slide">恐龙</div>
+			<div class="swiper-slide">拳皇</div>
+			<div class="swiper-slide">街霸</div>
+			<div class="swiper-slide">母鸡</div>
+			<div class="swiper-slide">石墨</div>
+			<div class="swiper-slide">解脱</div>
+			<div class="swiper-slide">防守</div>
+			<div class="swiper-slide">惩戒</div>
+		</div>
+	</div>
+
+	<script src="../dist/js/swiper.min.js"></script>
+	<script src="../dist/js/zepto.min.js"></script>
+	<script>
+		var slideIndex = 0; //当前所选的slide
+		var slideW; //slide的宽度
+		var contHalfW; //屏幕一半的宽度
+		//swiper初始化
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 'auto',
+			spaceBetween: 10,
+			resistanceRatio : 0,
+			//初始化完成
+			onInit: function() {
+				slideW = $('.swiper-slide').width();
+				contHalfW = $('.swiper-container').width() / 2;
+			},
+			//触摸结束
+			onTouchEnd: function() {
+				setTimeout(function() {
+					//计算偏移距离
+					deviation();
+				}, 100);
+			}
+		});
+		//计算偏移距离
+		function deviation(){
+			var betweenIndex = $('.swiper-slide').length - slideIndex;
+			var tranLeft = slideW * (slideIndex + 1) + 10 * slideIndex - slideW / 2;
+			var tranRight = betweenIndex * slideW + 10 * (betweenIndex - 1);
+			if(tranRight < contHalfW) {
+				var totalW = slideW * ($('.swiper-slide').length) + 10 * ($('.swiper-slide').length - 1);
+				swiper.setWrapperTranslate(0 - totalW + contHalfW * 2);
+			}else if(tranLeft > contHalfW) {
+				swiper.setWrapperTranslate(contHalfW - tranLeft);
+			} else {
+				swiper.setWrapperTranslate(0);
+			}
+		}
+		//切换
+		$('.swiper-slide').click(function() {
+			slideIndex = $(this).index();
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+		});
+	</script>
+</body>
+
+</html>
