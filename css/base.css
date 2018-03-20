@@ -4,6 +4,11 @@
 	display: -webkit-flex;
 	display: flex;
 }
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .flex-1 {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
