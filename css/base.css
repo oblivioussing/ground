@@ -19,8 +19,14 @@
 	position: absolute;
 }
 /* 显示 */
-.d-n{
+.none{
 	display: none;
+}
+.block{
+	display: block;
+}
+.i-b{
+	display: inline-block;
 }
 .o-h{
 	overflow: hidden;
