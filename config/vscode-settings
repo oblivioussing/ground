@@ -2,9 +2,6 @@
     "editor.tabSize": 2,
     "explorer.confirmDelete": false,
     "window.zoomLevel": 1,
-    "files.associations": {
-        "*.wpy": "vue"
-    },
     "git.autofetch": true,
     "vetur.format.defaultFormatter.html": "js-beautify-html",
     "vetur.format.defaultFormatter.js": "vscode-typescript",
