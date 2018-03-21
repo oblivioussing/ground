@@ -250,3 +250,15 @@
 .left-15{
 	left: 15px;
 }
+/* 滚动条样式 */
+.scroll-revise {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    background-color: #eef1f6;
+    height: 5px;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #e4e8f1;
+  }
+}
