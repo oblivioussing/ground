@@ -253,6 +253,7 @@
 /* 滚动条样式 */
 .scroll-revise {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     background-color: #eef1f6;
     height: 5px;
