@@ -18,5 +18,10 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "javascript.format.insertSpaceAfterConstructor": true,
-    "typescript.format.insertSpaceAfterConstructor": true
+    "typescript.format.insertSpaceAfterConstructor": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "workbench.startupEditor": "newUntitledFile",
+    "breadcrumbs.enabled": false,
+    "dart.flutterSdkPath": "D:\\Program Files\\flutter",
+    "editor.minimap.enabled": false
 }
