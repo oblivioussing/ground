@@ -23,5 +23,6 @@
     "workbench.startupEditor": "newUntitledFile",
     "breadcrumbs.enabled": false,
     "dart.flutterSdkPath": "D:\\Program Files\\flutter",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "explorer.compactFolders": false
 }
