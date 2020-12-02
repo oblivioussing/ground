@@ -3,7 +3,7 @@
     "vetur.format.defaultFormatter.js": "vscode-typescript",
     "vetur.format.defaultFormatterOptions": {
         "js-beautify-html": {
-            "wrap_attributes": "auto",
+            "wrap_attributes": "force",
             "indent_size": 2
         }
     },
